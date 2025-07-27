@@ -1,0 +1,30 @@
+app="n8n-appp"
+
+primary_ region= "lax"
+
+[build]
+dockerfile="Dockerfile"
+
+[ENV]
+ N8N_HOST="0.0.0.0
+ N8N_PORT="5678"
+ N8N_BASIC_AUTH_ACTIVE="true"
+ N8N8_BASIC_AUTH_USER="Admoi"
+ N8N8_BASIIC_AUTH_PASSWORD="Adm123"
+ WEBHOOK_URL="https://n8n8-appp.fly.dev
+
+[https_service]
+ internal_port=5678
+ force_https=true
+ auto_stop_machines=false
+ auto_star_machines=true
+ main_machines_running=1
+
+[[mounts]] 
+ source="n8n_data"
+ destination = "/home/node/.n8n"
+
+[[mounts]]
+ source = "n8n_extra"
+ destination = "/home/node/files"
+EOF
